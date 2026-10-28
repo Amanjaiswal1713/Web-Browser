@@ -1,0 +1,410 @@
+.toolbar {
+    position: relative;
+    z-index: 15;
+
+    display: flex;
+    width: 100%;
+    height: 62px;
+    min-height: 62px;
+    flex: 0 0 62px;
+    align-items: center;
+    gap: 13px;
+
+    padding: 8px 14px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.035);
+    border-bottom: 1px solid rgba(94, 109, 210, 0.28);
+
+    background:
+        linear-gradient(90deg,
+            rgba(10, 14, 43, 0.96),
+            rgba(17, 17, 63, 0.94),
+            rgba(8, 18, 54, 0.96));
+
+    box-shadow:
+        0 8px 24px rgba(1, 4, 20, 0.4);
+
+    -webkit-app-region: no-drag;
+}
+
+.navigationControls,
+.browserActions {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.toolbarButton {
+    display: grid;
+    width: 38px;
+    height: 38px;
+
+    place-items: center;
+
+    border-radius: 11px;
+
+    color: #c9ccea;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.toolbarButton:hover {
+    color: #ffffff;
+
+    background:
+        rgba(98, 108, 189, 0.2);
+}
+
+.toolbarButton:active {
+    transform: scale(0.94);
+}
+
+.addressBar {
+    position: relative;
+
+    display: flex;
+    min-width: 180px;
+    height: 43px;
+
+    flex: 1;
+    align-items: center;
+    gap: 9px;
+
+    padding: 0 10px 0 15px;
+
+    border: 1px solid rgba(72, 191, 255, 0.75);
+    border-radius: var(--radius-pill);
+
+    background:
+        linear-gradient(90deg,
+            rgba(21, 29, 67, 0.94),
+            rgba(37, 25, 77, 0.94));
+
+    box-shadow:
+        0 0 8px rgba(45, 195, 255, 0.4),
+        0 0 18px rgba(111, 73, 255, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.addressBar:focus-within {
+    border-color: #53d8ff;
+
+    box-shadow:
+        0 0 10px rgba(60, 214, 255, 0.65),
+        0 0 24px rgba(135, 67, 255, 0.38),
+        0 0 35px rgba(249, 83, 203, 0.15);
+}
+
+.searchIcon {
+    min-width: 19px;
+    color: #e4e6fb;
+}
+
+.addressInput {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    color: #f6f7ff;
+    background: transparent;
+
+    font-size: 14px;
+}
+
+.addressInput::placeholder {
+    color: #999fc3;
+}
+
+.addressAction {
+    display: grid;
+    width: 31px;
+    min-width: 31px;
+    height: 31px;
+
+    place-items: center;
+
+    border-radius: 9px;
+
+    color: #e7e8fa;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.addressAction:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.profileButton {
+    display: grid;
+    width: 38px;
+    height: 38px;
+
+    place-items: center;
+
+    border: 2px solid rgba(255, 197, 118, 0.7);
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #6448da,
+            #e14ca2);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 12px rgba(208, 81, 214, 0.3);
+}
+
+@media (max-width: 850px) {
+
+    .browserActions .toolbarButton:nth-child(2),
+    .browserActions .toolbarButton:nth-child(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .navigationControls .toolbarButton:nth-child(2),
+    .navigationControls .toolbarButton:nth-child(4) {
+        display: none;
+    }
+
+    .browserActions .profileButton,
+    .browserActions .toolbarButton:first-child {
+        display: none;
+    }
+
+    .toolbar {
+        gap: 6px;
+        padding-inline: 8px;
+    }
+}
+
+.addressWrapper {
+    position: relative;
+
+    min-width: 180px;
+    flex: 1;
+}
+
+.addressWrapper .addressBar {
+    width: 100%;
+}
+
+.secureIcon {
+    min-width: 18px;
+    color: #42e6ad;
+}
+
+.addressBarError {
+    border-color: #ff5577;
+
+    box-shadow:
+        0 0 10px rgba(255, 85, 119, 0.45),
+        0 0 22px rgba(255, 85, 119, 0.18);
+}
+
+.navigationError {
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 18px;
+    z-index: 100;
+
+    max-width: min(520px,
+            calc(100vw - 80px));
+
+    padding: 9px 13px;
+
+    border: 1px solid rgba(255, 85, 119, 0.42);
+    border-radius: 10px;
+
+    color: #ffd6df;
+
+    background:
+        rgba(65, 13, 35, 0.97);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 20, 0.45);
+
+    font-size: 12px;
+}
+
+.toolbarButton:disabled {
+    color: rgba(198, 203, 235, 0.28);
+    cursor: default;
+    pointer-events: none;
+}
+
+.toolbarButton:disabled:hover {
+    background: transparent;
+}
+
+.searchEngineSelector {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    flex: 0 0 auto;
+}
+
+.searchEngineButton {
+    display: flex;
+    height: 30px;
+
+    align-items: center;
+    gap: 3px;
+
+    padding: 0 6px;
+
+    border-radius: 9px;
+
+    color: #d9ddf8;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.searchEngineButton:hover {
+    background:
+        rgba(255, 255, 255, 0.09);
+}
+
+.engineBadge {
+    display: grid;
+
+    width: 22px;
+    height: 22px;
+
+    place-items: center;
+
+    border-radius: 7px;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg,
+            #35c9ff,
+            #7655f5);
+
+    font-size: 10px;
+    font-weight: 750;
+}
+
+.engineMenu {
+    position: absolute;
+
+    top: calc(100% + 11px);
+    left: 0;
+    z-index: 500;
+
+    width: 190px;
+
+    padding: 6px;
+
+    border:
+        1px solid rgba(115, 129, 222, 0.35);
+
+    border-radius: 13px;
+
+    background:
+        rgba(11, 16, 51, 0.98);
+
+    box-shadow:
+        0 18px 44px rgba(0, 0, 20, 0.58);
+
+    backdrop-filter: blur(20px);
+}
+
+.engineOption {
+    display: grid;
+    width: 100%;
+
+    grid-template-columns:
+        27px minmax(0, 1fr) 18px;
+
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px;
+
+    border-radius: 9px;
+
+    color: #daddf5;
+    background: transparent;
+
+    font-size: 12px;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.engineOption:hover {
+    color: white;
+
+    background:
+        rgba(92, 106, 198, 0.18);
+}
+
+.bookmarkedButton {
+    color: #f7c851;
+}
+
+.bookmarkedButton:hover {
+    color: #ffda72;
+
+    background:
+        rgba(247, 200, 81, 0.12);
+}
+
+.downloadButtonContent {
+    position: relative;
+
+    display: grid;
+
+    place-items: center;
+}
+
+.downloadBadge {
+    position: absolute;
+
+    top: -10px;
+    right: -12px;
+
+    display: grid;
+
+    min-width: 17px;
+    height: 17px;
+
+    place-items: center;
+
+    padding: 0 4px;
+
+    border: 2px solid #11163c;
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    background: #eb4f87;
+
+    font-size: 8px;
+    font-weight: 750;
+}

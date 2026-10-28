@@ -1,0 +1,2020 @@
+.newTabPage {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 190px minmax(0, 1fr);
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 72% 4%,
+            rgba(126, 66, 231, 0.16),
+            transparent 30%),
+        radial-gradient(circle at 20% 70%,
+            rgba(30, 145, 255, 0.1),
+            transparent 32%),
+        #070a20;
+}
+
+
+.sidebar {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+
+    padding: 14px 12px;
+
+    border-right:
+        1px solid rgba(75, 106, 230, 0.4);
+
+    background:
+        linear-gradient(180deg,
+            rgba(18, 17, 66, 0.96),
+            rgba(9, 20, 59, 0.96));
+
+    box-shadow:
+        8px 0 28px rgba(17, 39, 135, 0.2);
+}
+
+.sidebarNavigation {
+    display: flex;
+    min-height: 0;
+    gap: 5px;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.sidebarItem {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    gap: 12px;
+
+    padding: 8px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+    color: #bdc3e9;
+    background: transparent;
+
+    font-size: 13px;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        color 150ms ease,
+        border-color 150ms ease,
+        background 150ms ease,
+        transform 150ms ease;
+}
+
+.sidebarItem:hover {
+    color: #ffffff;
+    background: rgba(65, 90, 175, 0.18);
+}
+
+.sidebarItem:active {
+    transform: scale(0.98);
+}
+
+.sidebarIcon {
+    display: grid;
+    width: 27px;
+    min-width: 27px;
+    height: 27px;
+    place-items: center;
+
+    border-radius: 9px;
+
+    color: #b7b9ff;
+}
+
+.activeSidebarItem {
+    color: #ffffff;
+
+    border-color: rgba(56, 188, 255, 0.42);
+
+    background:
+        linear-gradient(90deg,
+            rgba(41, 112, 233, 0.6),
+            rgba(80, 58, 188, 0.36));
+
+    box-shadow:
+        0 0 19px rgba(39, 162, 255, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.activeSidebarItem .sidebarIcon {
+    background:
+        linear-gradient(135deg,
+            #48c5ff,
+            #6565f5);
+
+    box-shadow:
+        0 0 13px rgba(53, 189, 255, 0.42);
+}
+
+.customizeButton {
+    display: flex;
+    width: 100%;
+    min-height: 77px;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 12px;
+    padding: 13px;
+
+    border: 1px solid rgba(112, 104, 221, 0.32);
+    border-radius: 16px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(145deg,
+            rgba(46, 39, 113, 0.66),
+            rgba(15, 25, 73, 0.8));
+
+    text-align: left;
+    cursor: pointer;
+}
+
+.customizeButton small {
+    display: block;
+    margin-top: 4px;
+    color: #aeb4d8;
+    font-size: 11px;
+}
+
+.customizeIcon {
+    display: grid;
+    width: 39px;
+    min-width: 39px;
+    height: 39px;
+    place-items: center;
+
+    border-radius: 13px;
+
+    color: white;
+    background: var(--gradient-primary);
+}
+
+
+.dashboard {
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+
+    padding: 13px;
+}
+
+.dashboardHeader {
+    display: flex;
+    min-height: 51px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 10px;
+}
+
+.dashboardLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #939bc8;
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.dashboardLabel span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+
+    background: #38cfff;
+    box-shadow: 0 0 10px #38cfff;
+}
+
+.timeWeather {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(76, 138, 246, 0.5);
+    border-radius: 14px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(130deg,
+            rgba(22, 35, 88, 0.9),
+            rgba(32, 26, 91, 0.86));
+
+    box-shadow:
+        0 0 14px rgba(39, 134, 255, 0.2);
+}
+
+.timeBlock,
+.weatherText {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeBlock strong,
+.weatherText strong {
+    font-size: 13px;
+}
+
+.timeBlock span,
+.weatherText span {
+    color: #b6bddc;
+    font-size: 10px;
+}
+
+.weatherDivider {
+    width: 1px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.13);
+}
+
+
+.hero {
+    position: relative;
+
+    display: grid;
+    min-height: 310px;
+    grid-template-columns: minmax(0, 1fr) 250px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(99, 85, 224, 0.46);
+    border-radius: 25px;
+
+    background:
+        radial-gradient(circle at 64% 29%,
+            rgba(255, 173, 82, 0.78),
+            transparent 8%),
+        radial-gradient(circle at 69% 36%,
+            rgba(207, 72, 198, 0.37),
+            transparent 25%),
+        linear-gradient(136deg,
+            #121b58,
+            #3c256f 49%,
+            #131d5a);
+
+    box-shadow:
+        0 0 25px rgba(83, 70, 228, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+.hero::before,
+.hero::after {
+    position: absolute;
+    bottom: -45px;
+
+    border-radius: 45% 45% 0 0;
+
+    content: "";
+    transform: rotate(-5deg);
+}
+
+.hero::before {
+    right: 22%;
+    width: 290px;
+    height: 180px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(38, 34, 108, 0.22),
+            #0b143f 60%);
+
+    clip-path:
+        polygon(0 100%,
+            22% 34%,
+            39% 67%,
+            58% 4%,
+            74% 54%,
+            91% 21%,
+            100% 100%);
+}
+
+.hero::after {
+    left: 13%;
+    width: 360px;
+    height: 155px;
+
+    background: #0a1238;
+
+    clip-path:
+        polygon(0 100%,
+            27% 33%,
+            41% 77%,
+            62% 18%,
+            78% 66%,
+            100% 29%,
+            100% 100%);
+
+    opacity: 0.82;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(90deg,
+            rgba(5, 12, 46, 0.72),
+            transparent 63%);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+
+    align-self: center;
+    padding: 30px 24px 25px 42px;
+}
+
+.greeting {
+    margin: 0 0 4px;
+    color: #f0eeff;
+    font-size: 21px;
+}
+
+.heroContent h1 {
+    margin: 0;
+
+    color: #ffffff;
+    font-size: clamp(38px, 5vw, 61px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+
+    text-shadow:
+        0 6px 21px rgba(16, 14, 57, 0.42);
+}
+
+.heroSubtitle {
+    margin: 8px 0 21px;
+    color: #d5d8f2;
+    font-size: 15px;
+}
+
+.shortcutGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.shortcutCard {
+    display: flex;
+    width: 83px;
+    height: 72px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex-direction: column;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 150ms ease,
+        box-shadow 150ms ease;
+}
+
+.shortcutCard:hover {
+    transform: translateY(-3px);
+}
+
+.shortcutblue {
+    background:
+        linear-gradient(145deg, #1354ae, #132b7a);
+}
+
+.shortcutpink {
+    background:
+        linear-gradient(145deg, #bd1b68, #641249);
+}
+
+.shortcutorange {
+    background:
+        linear-gradient(145deg, #b25a28, #6c2932);
+}
+
+.shortcutpurple {
+    background:
+        linear-gradient(145deg, #6533ae, #351c7a);
+}
+
+.shortcutcyan {
+    background:
+        linear-gradient(145deg, #157e9c, #124765);
+}
+
+.shortcutrose {
+    background:
+        linear-gradient(145deg, #a02775, #5d165d);
+}
+
+.addShortcut {
+    color: #d5d8f2;
+    background: rgba(20, 28, 78, 0.74);
+}
+
+.quoteCard {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 18px;
+    padding: 25px;
+
+    border: 1px solid rgba(229, 103, 255, 0.35);
+    border-radius: 50% 25px 25px 50%;
+
+    background:
+        radial-gradient(circle at 75% 20%,
+            rgba(255, 137, 91, 0.25),
+            transparent 34%),
+        rgba(21, 18, 72, 0.76);
+
+    backdrop-filter: blur(18px);
+}
+
+.quoteCard>svg {
+    color: #d47bff;
+}
+
+.quoteCard blockquote {
+    margin: 11px 0;
+
+    color: #dcabff;
+    font-size: 17px;
+    font-weight: 650;
+    line-height: 1.35;
+}
+
+.quoteLine {
+    width: 23px;
+    height: 2px;
+    background: #d86eff;
+}
+
+.quoteCard p {
+    color: #afb5dc;
+    font-size: 11px;
+}
+
+.quoteCard button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    color: white;
+    background: rgba(100, 72, 215, 0.35);
+
+    font-size: 11px;
+    cursor: pointer;
+}
+
+
+.middleGrid,
+.bottomGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.22fr) minmax(340px, 0.88fr);
+    gap: 12px;
+
+    margin-top: 12px;
+}
+
+.panel {
+    position: relative;
+
+    min-width: 0;
+
+    border: 1px solid rgba(109, 89, 224, 0.43);
+    border-radius: 19px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(30, 27, 89, 0.8),
+            rgba(11, 22, 63, 0.88));
+
+    box-shadow:
+        0 10px 27px rgba(0, 4, 31, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(17px);
+}
+
+.panelHeader {
+    display: flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 15px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.panelHeader>div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.panelHeader h2 {
+    margin: 0;
+
+    color: #f8f8ff;
+    font-size: 15px;
+}
+
+.panelHeader button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #aca8ff;
+    background: transparent;
+
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+.storiesContent {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(200px, 0.7fr);
+    gap: 10px;
+
+    padding: 10px;
+}
+
+.featuredStory {
+    position: relative;
+
+    min-height: 188px;
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(6, 14, 47, 0.04),
+            rgba(5, 10, 36, 0.95)),
+        linear-gradient(130deg,
+            #174a83,
+            #8b4888 55%,
+            #e09c60);
+}
+
+.featuredVisual {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.featuredVisual::after {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(180deg,
+            transparent 20%,
+            rgba(5, 9, 34, 0.87) 88%);
+
+    content: "";
+}
+
+.cityBuildingOne,
+.cityBuildingTwo,
+.cityBuildingThree {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+
+    background:
+        linear-gradient(90deg,
+            #0b1f4b,
+            #173b72);
+
+    box-shadow:
+        inset 8px 0 0 rgba(67, 187, 255, 0.08);
+}
+
+.cityBuildingOne {
+    left: 11%;
+    width: 48px;
+    height: 125px;
+}
+
+.cityBuildingTwo {
+    left: 35%;
+    width: 64px;
+    height: 160px;
+}
+
+.cityBuildingThree {
+    left: 64%;
+    width: 71px;
+    height: 112px;
+}
+
+.citySun {
+    position: absolute;
+    top: 27px;
+    right: 17%;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 199, 108, 0.72);
+
+    box-shadow:
+        0 0 50px rgba(255, 150, 92, 0.76);
+}
+
+.featuredStoryText {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+
+    padding: 15px;
+}
+
+.featuredStoryText h3 {
+    max-width: 420px;
+    margin: 0 0 6px;
+
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.15;
+}
+
+.featuredStoryText p {
+    max-width: 460px;
+    margin: 0;
+
+    color: #ccd0e8;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.featuredStoryText button {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+
+    padding: 7px 15px;
+
+    border: 1px solid rgba(164, 136, 255, 0.5);
+    border-radius: 999px;
+
+    color: white;
+    background: rgba(38, 31, 102, 0.82);
+
+    font-size: 10px;
+}
+
+.secondaryStories {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+}
+
+.secondaryStory {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    align-items: center;
+    gap: 9px;
+
+    padding: 7px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.secondaryStory:last-child {
+    border-bottom: none;
+}
+
+.storyThumbnail {
+    display: grid;
+    width: 60px;
+    min-width: 60px;
+    height: 48px;
+    place-items: center;
+
+    border-radius: 10px;
+
+    color: white;
+}
+
+.storyThumbnailblue {
+    background: linear-gradient(135deg, #174e9c, #3b7bb8);
+}
+
+.storyThumbnailpurple {
+    background: linear-gradient(135deg, #5c2bb0, #bc4b9b);
+}
+
+.storyThumbnailorange {
+    background: linear-gradient(135deg, #af4a39, #e49854);
+}
+
+.secondaryStory h3 {
+    margin: 0;
+
+    color: #ffffff;
+    font-size: 11px;
+    line-height: 1.25;
+}
+
+.secondaryStory p {
+    margin: 4px 0 0;
+
+    color: #9098c3;
+    font-size: 9px;
+}
+
+
+.quickTools {
+    overflow: visible;
+}
+
+.lightning {
+    color: #ffbd58;
+    font-size: 20px;
+}
+
+.toolsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(65px, 1fr));
+    gap: 9px;
+
+    padding: 10px;
+}
+
+.toolCard {
+    display: flex;
+    min-height: 78px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-direction: column;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 13px;
+
+    color: #f3f4ff;
+    background:
+        linear-gradient(145deg,
+            rgba(40, 47, 104, 0.76),
+            rgba(17, 31, 79, 0.8));
+
+    font-size: 9px;
+    cursor: pointer;
+
+    transition:
+        transform 150ms ease,
+        border-color 150ms ease;
+}
+
+.toolCard:hover {
+    border-color: rgba(100, 195, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.toolIcon {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+
+    border-radius: 10px;
+}
+
+.toolorange {
+    color: #ffc662;
+}
+
+.toolpurple {
+    color: #a991ff;
+}
+
+.toolcyan {
+    color: #53daff;
+}
+
+.toolyellow {
+    color: #ffe069;
+}
+
+.toolpink {
+    color: #ff7f9e;
+}
+
+.toolaqua {
+    color: #37e0d4;
+}
+
+.toolviolet {
+    color: #bb98ff;
+}
+
+.toolDialog {
+    position: absolute;
+    top: 51px;
+    right: 12px;
+    z-index: 40;
+
+    width: min(310px, calc(100% - 24px));
+
+    padding: 14px;
+
+    border: 1px solid rgba(107, 192, 255, 0.5);
+    border-radius: 16px;
+
+    background: rgba(10, 17, 54, 0.97);
+
+    box-shadow:
+        0 18px 48px rgba(0, 0, 20, 0.58),
+        0 0 22px rgba(73, 132, 255, 0.18);
+}
+
+.dialogHeader,
+.dialogHeader>div {
+    display: flex;
+    align-items: center;
+}
+
+.dialogHeader {
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.dialogHeader>div {
+    gap: 8px;
+}
+
+.dialogHeader h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.dialogHeader button {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    place-items: center;
+
+    border-radius: 8px;
+
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.calculatorInputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.calculatorInputs input {
+    min-width: 0;
+    padding: 9px;
+
+    border: 1px solid rgba(105, 119, 204, 0.42);
+    border-radius: 9px;
+
+    color: white;
+    background: rgba(23, 30, 81, 0.78);
+}
+
+.calculatorActions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+
+    margin-top: 9px;
+}
+
+.calculatorActions button {
+    padding: 8px;
+
+    border-radius: 8px;
+
+    color: white;
+    background: rgba(93, 67, 190, 0.55);
+}
+
+.calculatorResult {
+    display: block;
+
+    margin-top: 10px;
+    padding: 10px;
+
+    border-radius: 9px;
+
+    color: #71e6ff;
+    background: rgba(25, 38, 88, 0.8);
+
+    text-align: right;
+}
+
+
+.musicContent {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 15px;
+
+    padding: 10px;
+}
+
+.albumCover {
+    position: relative;
+
+    min-height: 112px;
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(145deg,
+            #4d48b7,
+            #d74d9a 50%,
+            #ffb054);
+}
+
+.albumSun {
+    position: absolute;
+    top: 19px;
+    right: 20px;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: #ffd779;
+    box-shadow: 0 0 30px #ffad5e;
+}
+
+.albumMountainOne,
+.albumMountainTwo {
+    position: absolute;
+    bottom: 0;
+
+    background: #1a174c;
+
+    clip-path:
+        polygon(0 100%,
+            40% 25%,
+            62% 66%,
+            80% 18%,
+            100% 100%);
+}
+
+.albumMountainOne {
+    left: 0;
+    width: 105%;
+    height: 71px;
+}
+
+.albumMountainTwo {
+    right: -25px;
+    width: 92%;
+    height: 54px;
+    opacity: 0.72;
+}
+
+.trackArea {
+    min-width: 0;
+    padding-top: 5px;
+}
+
+.trackHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.trackHeader h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.trackHeader p {
+    margin: 3px 0 0;
+    color: #aeb5da;
+    font-size: 11px;
+}
+
+.trackActions {
+    display: flex;
+    gap: 3px;
+}
+
+.trackActions button,
+.playerControls button {
+    display: grid;
+    place-items: center;
+
+    color: #d9dcf4;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.trackActions button {
+    width: 30px;
+    height: 30px;
+}
+
+.likedButton {
+    color: #ff6092 !important;
+}
+
+.progressRow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+
+    align-items: center;
+    margin-top: 9px;
+}
+
+.progressTrack {
+    height: 4px;
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #4c579c;
+}
+
+.progressTrack span {
+    display: block;
+    width: 43%;
+    height: 100%;
+
+    background:
+        linear-gradient(90deg, #f352dd, #52d8ff);
+
+    box-shadow: 0 0 8px #53d9ff;
+}
+
+.progressRow small {
+    color: #c7cbea;
+    font-size: 9px;
+}
+
+.playerControls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 10px;
+}
+
+.playerControls button {
+    width: 34px;
+    height: 34px;
+}
+
+.playerControls .playButton {
+    width: 45px;
+    height: 45px;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    color: white;
+    background:
+        linear-gradient(145deg, #4f43b8, #152c74);
+
+    box-shadow:
+        0 0 15px rgba(99, 145, 255, 0.35);
+}
+
+
+.carouselDots {
+    display: flex;
+    gap: 6px;
+}
+
+.carouselDots i {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #3a427f;
+}
+
+.carouselDots .activeDot {
+    background: #f1f2ff;
+}
+
+.travelVisual {
+    position: relative;
+
+    min-height: 132px;
+    overflow: hidden;
+
+    margin: 9px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(180deg,
+            #365c9c,
+            #79abd4 45%,
+            #14456d 46%,
+            #0d395d);
+}
+
+.travelSun {
+    position: absolute;
+    top: 19px;
+    right: 20%;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #f6d79a;
+    box-shadow: 0 0 34px #f3c486;
+}
+
+.travelMountainBack,
+.travelMountainFront {
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    clip-path:
+        polygon(0 100%,
+            20% 29%,
+            35% 71%,
+            51% 9%,
+            68% 66%,
+            82% 25%,
+            100% 100%);
+}
+
+.travelMountainBack {
+    bottom: 29%;
+    height: 78%;
+
+    background: #8ca8c6;
+    opacity: 0.72;
+}
+
+.travelMountainFront {
+    bottom: 16%;
+    height: 66%;
+
+    background: #263b66;
+}
+
+.travelLake {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 34%;
+
+    background:
+        linear-gradient(180deg,
+            rgba(67, 194, 222, 0.78),
+            #0d4268);
+}
+
+.travelText {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    z-index: 4;
+}
+
+.travelText h3 {
+    margin: 0;
+
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 0.94;
+
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.55);
+}
+
+.travelText p {
+    margin: 7px 0 0;
+    color: #eff3ff;
+    font-size: 10px;
+}
+
+.travelVisual>button {
+    position: absolute;
+    right: 12px;
+    bottom: 13px;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border: 1px solid rgba(89, 200, 255, 0.55);
+    border-radius: 999px;
+
+    color: white;
+    background: rgba(22, 51, 117, 0.8);
+
+    font-size: 10px;
+}
+
+
+.sectionPlaceholder {
+    display: flex;
+    min-height: 390px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: 10px;
+    padding: 30px;
+
+    border: 1px solid rgba(102, 95, 226, 0.38);
+    border-radius: 23px;
+
+    color: white;
+    background:
+        linear-gradient(145deg,
+            rgba(30, 28, 91, 0.8),
+            rgba(10, 21, 59, 0.9));
+
+    text-align: center;
+}
+
+.sectionPlaceholder h1 {
+    margin: 0 0 10px;
+    font-size: 35px;
+}
+
+.sectionPlaceholder p {
+    color: #afb6dc;
+}
+
+.sectionPlaceholder button {
+    margin-top: 16px;
+    padding: 10px 17px;
+
+    border-radius: 999px;
+
+    color: white;
+    background:
+        linear-gradient(120deg, #416ff1, #8852e9);
+
+    cursor: pointer;
+}
+
+
+@media (max-width: 1180px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .quoteCard {
+        display: none;
+    }
+
+    .middleGrid,
+    .bottomGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 850px) {
+    .newTabPage {
+        grid-template-columns: 70px minmax(0, 1fr);
+    }
+
+    .sidebarItem {
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .sidebarItem>span:last-child,
+    .customizeButton>span:last-child {
+        display: none;
+    }
+
+    .customizeButton {
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .heroContent {
+        padding-left: 25px;
+    }
+
+    .storiesContent {
+        grid-template-columns: 1fr;
+    }
+
+    .secondaryStories {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .secondaryStory {
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .newTabPage {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .dashboard {
+        padding: 8px;
+    }
+
+    .dashboardHeader {
+        align-items: flex-start;
+    }
+
+    .dashboardLabel {
+        display: none;
+    }
+
+    .timeWeather {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .heroContent {
+        padding: 26px 16px;
+    }
+
+    .shortcutCard {
+        width: 73px;
+    }
+
+    .toolsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .secondaryStories {
+        grid-template-columns: 1fr;
+    }
+
+    .secondaryStory {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .musicContent {
+        grid-template-columns: 85px minmax(0, 1fr);
+    }
+
+    .albumCover {
+        min-height: 100px;
+    }
+}
+
+/* =========================================================
+   STAGE 7D - DYNAMIC SHORTCUT SUPPORT
+   ========================================================= */
+
+.shortcutWrapper {
+    position: relative;
+
+    width: 83px;
+    height: 72px;
+
+    flex: 0 0 83px;
+}
+
+.shortcutWrapper .shortcutCard {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   SHORTCUT LETTER
+   ========================================================= */
+
+.shortcutLetter {
+    display: grid;
+
+    width: 31px;
+    height: 31px;
+
+    place-items: center;
+
+    border: 2px solid rgba(255,
+            255,
+            255,
+            0.9);
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 750;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SHORTCUT LABEL
+   ========================================================= */
+
+.shortcutLabel {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 650;
+
+    text-align: center;
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SHORTCUT THREE-DOT MENU
+   ========================================================= */
+
+.shortcutMenu {
+    position: absolute;
+
+    top: 4px;
+    right: 4px;
+
+    z-index: 30;
+}
+
+.shortcutMenuButton {
+    display: grid;
+
+    width: 22px;
+    height: 22px;
+
+    place-items: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    background:
+        rgba(5,
+            8,
+            29,
+            0.62);
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    transition:
+        opacity 150ms ease,
+        background 150ms ease;
+}
+
+.shortcutWrapper:hover .shortcutMenuButton,
+.shortcutMenuButton:focus-visible {
+    opacity: 1;
+}
+
+.shortcutMenuButton:hover {
+    background:
+        rgba(255,
+            255,
+            255,
+            0.18);
+}
+
+
+/* =========================================================
+   EDIT / DELETE MENU
+   ========================================================= */
+
+.shortcutActions {
+    position: absolute;
+
+    top: 25px;
+    right: 0;
+
+    z-index: 40;
+
+    display: none;
+
+    width: 95px;
+
+    padding: 5px;
+
+    border:
+        1px solid rgba(116,
+            123,
+            217,
+            0.4);
+
+    border-radius: 10px;
+
+    background:
+        rgba(10,
+            15,
+            49,
+            0.98);
+
+    box-shadow:
+        0 14px 32px rgba(0,
+            0,
+            20,
+            0.5);
+}
+
+.shortcutMenu:hover .shortcutActions,
+.shortcutMenu:focus-within .shortcutActions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.shortcutActions button {
+    width: 100%;
+    min-height: 27px;
+
+    padding:
+        0 8px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    color: #c9cee9;
+
+    background:
+        transparent;
+
+    font-size: 9px;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.shortcutActions button:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.09);
+}
+
+.shortcutActions .deleteShortcutAction:hover {
+    color: #ff849a;
+
+    background:
+        rgba(255,
+            65,
+            103,
+            0.11);
+}
+
+
+/* =========================================================
+   ADD TILE POLISH
+   ========================================================= */
+
+.addShortcut {
+    border:
+        1px solid rgba(116,
+            126,
+            221,
+            0.38);
+
+    color: #d5d8f2;
+
+    background:
+        linear-gradient(145deg,
+            rgba(27,
+                38,
+                96,
+                0.82),
+            rgba(15,
+                25,
+                70,
+                0.82));
+}
+
+.addShortcut:hover {
+    border-color:
+        rgba(81,
+            187,
+            255,
+            0.45);
+
+    box-shadow:
+        0 9px 22px rgba(26,
+            100,
+            218,
+            0.18);
+}
+
+
+/* =========================================================
+   STAGE 7D - SHORTCUT DIALOG
+   ========================================================= */
+
+.shortcutDialogBackdrop {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(2,
+            5,
+            18,
+            0.75);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+.shortcutDialog {
+    width:
+        min(430px,
+            100%);
+
+    padding: 22px;
+
+    border:
+        1px solid rgba(111,
+            109,
+            223,
+            0.42);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(145deg,
+            #171c50,
+            #0e163d);
+
+    box-shadow:
+        0 25px 80px rgba(0,
+            0,
+            20,
+            0.72);
+}
+
+.shortcutDialogHeader {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 19px;
+}
+
+.shortcutDialogHeader>div {
+    min-width: 0;
+}
+
+.shortcutDialogHeader h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 650;
+}
+
+.shortcutDialogHeader p {
+    margin:
+        5px 0 0;
+
+    color: #929bc5;
+
+    font-size: 11px;
+}
+
+.shortcutDialogClose {
+    display: grid;
+
+    width: 31px;
+    min-width: 31px;
+    height: 31px;
+
+    place-items: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    color: #b9c0df;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.06);
+
+    cursor: pointer;
+}
+
+.shortcutDialogClose:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.12);
+}
+
+
+/* =========================================================
+   SHORTCUT FORM
+   ========================================================= */
+
+.shortcutField {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    margin-top: 13px;
+}
+
+.shortcutField span {
+    color: #b9c1e2;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.shortcutField input {
+    width: 100%;
+    height: 42px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid rgba(101,
+            121,
+            208,
+            0.32);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color: #ffffff;
+
+    background:
+        rgba(10,
+            15,
+            48,
+            0.68);
+
+    font: inherit;
+    font-size: 12px;
+
+    transition:
+        border-color 150ms ease,
+        box-shadow 150ms ease,
+        background 150ms ease;
+}
+
+.shortcutField input::placeholder {
+    color: #737da9;
+}
+
+.shortcutField input:hover {
+    border-color:
+        rgba(113,
+            137,
+            224,
+            0.45);
+}
+
+.shortcutField input:focus {
+    border-color:
+        rgba(70,
+            197,
+            255,
+            0.68);
+
+    background:
+        rgba(11,
+            18,
+            55,
+            0.89);
+
+    box-shadow:
+        0 0 16px rgba(44,
+            181,
+            255,
+            0.12);
+}
+
+.shortcutError {
+    margin:
+        10px 0 0;
+
+    color: #ff8599;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   DIALOG ACTIONS
+   ========================================================= */
+
+.shortcutDialogActions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.shortcutDialogActions button {
+    min-height: 40px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.shortcutCancelButton {
+    color: #c4c9e5;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.06);
+}
+
+.shortcutCancelButton:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.11);
+}
+
+.shortcutSaveButton {
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #3379db,
+            #7252d4);
+
+    box-shadow:
+        0 8px 20px rgba(61,
+            88,
+            206,
+            0.2);
+}
+
+.shortcutSaveButton:hover {
+    background:
+        linear-gradient(135deg,
+            #3d89ee,
+            #8060e2);
+}
+
+
+/* =========================================================
+   STAGE 7D FOCUS STATES
+   ========================================================= */
+
+.shortcutCard:focus-visible,
+.shortcutMenuButton:focus-visible,
+.shortcutActions button:focus-visible,
+.shortcutDialogClose:focus-visible,
+.shortcutDialogActions button:focus-visible {
+    outline:
+        2px solid #62d8ff;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   STAGE 7D MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+    .shortcutWrapper {
+        width: 73px;
+        flex-basis: 73px;
+    }
+
+    .shortcutMenuButton {
+        opacity: 1;
+    }
+
+    .shortcutDialog {
+        padding: 18px;
+    }
+
+    .shortcutDialogActions {
+        grid-template-columns:
+            1fr;
+    }
+}

@@ -1,0 +1,118 @@
+.findBar {
+    position: absolute;
+
+    top: 64px;
+    right: 18px;
+
+    z-index: 1100;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 260px) auto 32px 32px 32px;
+
+    align-items: center;
+
+    gap: 4px;
+
+    min-height: 42px;
+
+    padding:
+        5px 6px 5px 10px;
+
+    border: 1px solid rgba(97,
+            137,
+            235,
+            0.42);
+
+    border-radius: 12px;
+
+    background:
+        rgba(16,
+            22,
+            65,
+            0.98);
+
+    box-shadow:
+        0 12px 35px rgba(0,
+            0,
+            20,
+            0.45);
+}
+
+.topArea {
+    position: relative;
+    z-index: 1000;
+}
+
+.findBar input {
+    min-width: 0;
+
+    border: 0;
+
+    outline: none;
+
+    color: #ffffff;
+
+    background:
+        transparent;
+
+    font-size: 12px;
+}
+
+.findBar input::placeholder {
+    color: #7f89b5;
+}
+
+.resultCount {
+    min-width: 42px;
+
+    color: #9ba5ce;
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+.findBar button {
+    display: grid;
+
+    width: 32px;
+    height: 32px;
+
+    place-items: center;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    color: #cbd1ee;
+
+    background:
+        transparent;
+
+    cursor: pointer;
+}
+
+.findBar button:hover:not( :disabled) {
+    color: #ffffff;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.09);
+}
+
+.findBar button:disabled {
+    opacity: 0.35;
+
+    cursor: default;
+}
+
+.findBar button:focus-visible,
+.findBar input:focus-visible {
+    outline: 2px solid #59ccff;
+
+    outline-offset: 1px;
+}

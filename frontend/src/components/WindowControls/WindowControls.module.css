@@ -1,0 +1,57 @@
+.controls {
+    display: flex;
+    width: 138px;
+    min-width: 138px;
+    height: 100%;
+
+    flex: 0 0 138px;
+    align-items: stretch;
+
+    margin-left: auto;
+
+    -webkit-app-region: no-drag;
+}
+
+.controlButton {
+    display: grid;
+    width: 46px;
+    height: 100%;
+
+    flex: 0 0 46px;
+    place-items: center;
+
+    border: 0;
+    border-radius: 0;
+
+    color: var(--color-text-secondary);
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast);
+
+    -webkit-app-region: no-drag;
+}
+
+.controlButton:hover {
+    color: var(--color-text-primary);
+
+    background:
+        rgba(255, 255, 255, 0.1);
+}
+
+.controlButton:active {
+    background:
+        rgba(255, 255, 255, 0.16);
+}
+
+.closeButton:hover {
+    color: #ffffff;
+    background: #e84658;
+}
+
+.closeButton:active {
+    background: #c63849;
+}

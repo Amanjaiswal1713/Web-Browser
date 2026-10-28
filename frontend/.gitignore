@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# React/Vite build
+frontend/dist/
+frontend/.vite/
+
+# Electron packaging
+frontend/release/
+frontend/out/
+
+# Java/Spring Boot build
+backend/target/
+backend/.mvn/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

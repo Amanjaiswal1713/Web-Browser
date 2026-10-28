@@ -1,0 +1,70 @@
+:root {
+    color-scheme: dark;
+
+    --color-background-primary: #060817;
+    --color-background-secondary: #0a0f2b;
+    --color-background-tertiary: #11183a;
+
+    --color-surface: rgba(14, 20, 55, 0.82);
+    --color-surface-light: rgba(30, 39, 84, 0.72);
+    --color-surface-hover: rgba(48, 61, 122, 0.72);
+
+    --color-text-primary: #f6f7ff;
+    --color-text-secondary: #c6c9e8;
+    --color-text-muted: #8e94bd;
+
+    --color-accent-blue: #2cc8ff;
+    --color-accent-purple: #7c4dff;
+    --color-accent-pink: #f548cc;
+    --color-accent-orange: #ffb74a;
+
+    --color-danger: #ff5577;
+    --color-success: #2ee6a6;
+
+    --border-light: rgba(255, 255, 255, 0.12);
+    --border-accent: rgba(94, 137, 255, 0.5);
+
+    --gradient-primary:
+        linear-gradient(110deg,
+            #25c5ff 0%,
+            #6f55ff 38%,
+            #ef51cf 70%,
+            #ffba52 100%);
+
+    --gradient-background:
+        radial-gradient(circle at 20% 10%,
+            rgba(105, 67, 255, 0.28),
+            transparent 35%),
+        radial-gradient(circle at 85% 25%,
+            rgba(29, 164, 255, 0.2),
+            transparent 30%),
+        linear-gradient(145deg,
+            #060817 0%,
+            #0b1030 55%,
+            #070a1f 100%);
+
+    --shadow-window:
+        0 0 25px rgba(30, 157, 255, 0.28),
+        0 0 55px rgba(105, 76, 255, 0.2);
+
+    --shadow-neon:
+        0 0 14px rgba(45, 197, 255, 0.35),
+        0 0 24px rgba(126, 79, 255, 0.22);
+
+    --radius-small: 8px;
+    --radius-medium: 14px;
+    --radius-large: 22px;
+    --radius-pill: 999px;
+
+    --titlebar-height: 46px;
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
